@@ -1,0 +1,103 @@
+/* ===== Doctors Hero Banner ===== */
+.doctors-hero-banner {
+    background: linear-gradient(135deg, #007fc5, #0056a3);
+    min-height: 160px;
+    padding: 40px 20px;
+}
+
+.doctors-hero-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.breadcrumb-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb-text span {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ===== Filter Sidebar ===== */
+.filter-sidebar {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.filter-search {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    padding: 10px 14px;
+}
+
+.filter-search:focus {
+    border-color: #007fc5;
+    box-shadow: 0 0 0 3px rgba(0, 127, 197, 0.1);
+}
+
+.search-btn {
+    background-color: #007fc5;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.search-btn:hover {
+    background-color: #0066a3;
+}
+
+.filter-label {
+    font-weight: 700;
+    font-size: 14px;
+    color: #1a1a2e;
+    display: block;
+}
+
+.form-check-label {
+    font-size: 13px;
+    color: #555;
+}
+
+.form-check-input:checked {
+    background-color: #007fc5;
+    border-color: #007fc5;
+}
+
+.filter-select {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #555;
+}
+
+.filter-select:focus {
+    border-color: #007fc5;
+    box-shadow: 0 0 0 3px rgba(0, 127, 197, 0.1);
+}
+
+.search-filter-btn {
+    background-color: #007fc5;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+}
+
+.search-filter-btn:hover {
+    background-color: #0066a3;
+}
+
+/* ===== Doctors Page Section ===== */
+.doctors-page-section {
+    background-color: #f0f6fa;
+    min-height: 600px;
+}

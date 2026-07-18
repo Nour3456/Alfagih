@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css"
+        integrity="sha512-F/yRpRY8sctKzP7exU5PLGejwg/QtjDX6CIy/41nApe7JqdZgCcCzJTNq9Rcp/XwbeeTGillGevBakruY15pxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Alfagih</title>
+</head>
+
+<body>
+    <header class="custom-header">
+        <div class="top-bar d-flex justify-content-end align-items-center">
+            <a href="#" class="top-link">Join Us</a>
+            <a href="tel:0114560000" class="top-link">0114560000</a>
+            <a href="mailto:info@dmf.med.sa" class="top-link">info@dmf.med.sa</a>
+        </div>
+
+        <div class="header-main-content d-flex align-items-center justify-content-between">
+            <div class="logo-section d-flex align-items-center">
+                <img src="./media/origin icon.png" alt="Hospital Logo" class="logo-img">
+                <div class="brand-titles">
+                    <h1 class="brand-ar">مستشفى الدكتور محمد الفقيه</h1>
+                    <h2 class="brand-en">DR. MOHAMMAD ALFAGIH HOSPITAL</h2>
+                </div>
+            </div>
+
+            <nav class="custom-navbar">
+                <div class="nav-links-wrapper">
+                    <a class="nav-item active-home" href="#">Home</a>
+                    <a class="nav-item" href="#about">About</a>
+                    <a class="nav-item" href="#appointments">Appointments</a>
+                    <a class="nav-item" href="#services">Services</a>
+                    <a class="nav-item" href="#">News</a>
+                    <a class="nav-item" href="#">Media</a>
+                    <a class="nav-item" href="contact.html">Contact Us</a>
+
+                    <a class="nav-item search-icon-btn" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </a>
+
+                    <a class="nav-item lang-switch" href="#">العربية</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <video id="heroBgVideo" loop class="hero-video">
+            <source src="./media/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="container h-100 position-relative z-3">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-7 text-white hero-content">
+
+                    <h1 class="hero-title fw-bold mb-3">
+                        Welcome to <br>
+                        <span>Dr. Mohammad Alfagih Hospital</span>
+                    </h1>
+
+                    <p class="hero-desc mb-4">
+                        With the help of God, we seek in Dr. Mohammad Alfagih Hospital, to meet the needs of our clients
+                        in various medical specialties.
+                    </p>
+                    <a href="#" class="btn-watch-video d-inline-flex align-items-center text-decoration-none">
+                        <span>Watch full video</span>
+                        <div class="play-icon-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5 d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="large-hero-logo-container">
+                        <img src="./media/icon.png" alt="Big Logo" class="hero-big-logo mb-3">
+                        <div class="big-logo-text text-white">
+                            <div class="ar-text">مستشفى الدكتور محمد الفقيه</div>
+                            <div class="en-text">DR. MOHAMMAD ALFAGIH HOSPITAL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="customVideoModal" class="custom-video-modal" style="display: none;">
+            <div class="custom-modal-overlay"></div>
+            <div class="custom-modal-wrapper">
+                <div class="custom-modal-container">
+                    <button type="button" class="custom-modal-close" aria-label="Close">&times;</button>
+                    <div class="custom-video-ratio">
+                        <video id="popupVideo" controls>
+                            <source src="./media/videoplayback.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECOND SECTION -->
+    <section id="about" class="about-section py-5 my-3">
+        <div class="container my-5">
+            <div class="row align-items-center gy-5">
+
+                <div class="col-12 col-md-5 d-flex justify-content-center justify-content-md-start ps-md-4">
+                    <div class="image-wrapper">
+                        <img src="./media/image.png" class="main-img" alt="About Us Image">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-7 ps-md-5">
+
+                    <h2 class="about-title mb-3" style="color: rgb(0, 124, 191);">About us</h2>
+                    <p class="about-text mb-4" style="color: rgb(136, 138, 140);">
+                        Dr. Muhammad Alfagih Hospital was established to be advanced and sophisticated in its
+                        construction,
+                        equipment to keep pace with the development of health services in the Kingdom of Saudi Arabia
+                        and
+                        the world and to attract high medical competencies in various medical specialties, hoping that
+                        we
+                        will be part of the health progress in our dear kingdom and contribute to achieve Vision 2030.
+                    </p>
+
+                    <div class="d-flex flex-column gap-3 ">
+
+                        <div class="custom-card bg-white d-flex align-items-center">
+                            <div class="custom-card-icon">
+                                <img src="./media/Frame.png" alt="Vision Icon" class="icon1">
+                            </div>
+                            <div class="custom-card-body p-0">
+                                <h4 class="custom-card-title">Our vision</h4>
+                                <p class="custom-card-text">We seek to gain people's confidence by providing health
+                                    services that live up to their aspirations.</p>
+                            </div>
+                        </div>
+
+                        <div class="custom-card bg-white d-flex align-items-center">
+                            <div class="custom-card-icon">
+                                <img src="./media/Frame (1).png" alt="Mission Icon" class="icon1">
+                            </div>
+                            <div class="custom-card-body p-0">
+                                <h4 class="custom-card-title">Our Mission</h4>
+                                <p class="custom-card-text">Caring for the patient and his family with concern, respect,
+                                    sympathy and giving them hope.</p>
+                            </div>
+                        </div>
+
+                        <div class="custom-card bg-white d-flex align-items-center">
+                            <div class="custom-card-icon">
+                                <img src="./media/Frame (2).png" alt="Values Icon" class="icon1">
+                            </div>
+                            <div class="custom-card-body p-0">
+                                <h4 class="custom-card-title">Our Values</h4>
+                                <p class="custom-card-text">We commit ourselves to making our values present in our
+                                    mind, visible in our actions.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- THIRD SECTION -->
+    <section id="services" class="services-section">
+        <div class="services-title text-center mb-4">
+            <h4 style="color: rgb(0, 124, 191);">Our services</h4>
+            <p class="fs-1 fw-bolder">Choose the service you want</p>
+        </div>
+
+        <div class="servicesCards d-flex justify-content-evenly py-3">
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-blue">
+                    <i class="bi bi-calendar4-week text-blue"></i>
+                </div>
+                <p class="card-text">Appointments</p>
+            </div>
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-orange">
+                    <i class="bi bi-capsule text-orange"></i>
+                </div>
+                <p class="card-text">Medications</p>
+            </div>
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-green">
+                    <i class="bi bi-funnel text-green"></i>
+                </div>
+                <p class="card-text">Lab</p>
+            </div>
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-purple">
+                    <i class="bi bi-shield-plus text-purple"></i>
+                </div>
+                <p class="card-text">Insurance</p>
+            </div>
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-yellow">
+                    <i class="bi bi-circle-square text-yellow"></i>
+                </div>
+                <p class="card-text">Radiology</p>
+            </div>
+
+            <div class="serviceCard1 d-flex flex-column align-items-center justify-content-center">
+                <div class="calendar-icon-wrapper bg-pink">
+                    <i class="bi bi-file-earmark-medical text-pink"></i>
+                </div>
+                <p class="card-text">Timeline</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FORTH SECTION -->
+    <section class="doctors-section py-5" style="background-color: rgb(230, 238, 243);">
+        <div class="doctors-title text-center mb-5">
+            <span class="d-block mb-1" style="color: #0085db; font-weight: 700; font-size: 14px;">Outstanding
+                Doctors</span>
+            <h4 class="fw-bold fs-2" style="color: #0d0d0d;">Outstanding doctors in all fields</h4>
+        </div>
+
+        <div class="doctors-cards d-flex justify-content-center gap-4">
+            <div class="doctor-card d-flex align-items-end justify-content-between">
+                <div class="left-card d-flex flex-column justify-content-between h-100">
+                    <div class="doctor-info-top">
+                        <div class="doctor-name-wrapper d-flex align-items-center gap-2">
+                            <h5 class="m-0 fw-bold">Dr. Ahmad<br>Al Ayouby</h5>
+                            <i class="bi bi-patch-check-fill" style="color: #007fc5;"></i>
+                        </div>
+                        <p class="specialty-text my-2">Cardiology / Cardiology<br>Consultant</p>
+                    </div>
+
+                    <div class="three-badges d-flex gap-2 align-items-center">
+                        <div class="doctor-badge d-flex align-items-center gap-1">
+                            <img src="./media/Flag_of_Saudi_Arabia 1.png" alt="saudi arabia" class="saudi-flag">
+                            <span>KSA</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">+2000</span>
+                            <span class="badge-label">Patient</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">12 YRS</span>
+                            <span class="badge-label">Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-card">
+                    <img src="./media/Doctor Image (1).png" alt="Dr. Ahmad" class="doctor-img">
+                </div>
+            </div>
+            <div class="doctor-card d-flex align-items-end justify-content-between">
+                <div class="left-card d-flex flex-column justify-content-between h-100">
+                    <div class="doctor-info-top">
+                        <div class="doctor-name-wrapper d-flex align-items-center gap-2">
+                            <h5 class="m-0 fw-bold">Dr. Aisha<br>Al Enazi</h5>
+                            <i class="bi bi-patch-check-fill" style="color: #007fc5;"></i>
+                        </div>
+                        <p class="specialty-text my-2">Cardiology / Cardiology<br>Consultant</p>
+                    </div>
+
+                    <div class="three-badges d-flex gap-2 align-items-center">
+                        <div class="doctor-badge d-flex align-items-center gap-1">
+                            <img src="./media/Flag_of_Saudi_Arabia 1.png" alt="saudi arabia" class="saudi-flag">
+                            <span>KSA</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">+2000</span>
+                            <span class="badge-label">Patient</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">12 YRS</span>
+                            <span class="badge-label">Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-card">
+                    <img src="./media/Doctor Image.png" alt="Dr. Aisha" class="doctor-img">
+                </div>
+            </div>
+
+            <div class="doctor-card d-flex align-items-end justify-content-between">
+                <div class="left-card d-flex flex-column justify-content-between h-100">
+                    <div class="doctor-info-top">
+                        <div class="doctor-name-wrapper d-flex align-items-center gap-2">
+                            <h5 class="m-0 fw-bold">Dr. Adel<br>Alotaibi</h5>
+                            <i class="bi bi-patch-check-fill" style="color: #007fc5;"></i>
+                        </div>
+                        <p class="specialty-text my-2">Cardiology / Cardiology<br>Consultant</p>
+                    </div>
+
+                    <div class="three-badges d-flex gap-2 align-items-center">
+                        <div class="doctor-badge d-flex align-items-center gap-1">
+                            <img src="./media/Flag_of_Saudi_Arabia 1.png" alt="saudi arabia" class="saudi-flag">
+                            <span>KSA</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">+2000</span>
+                            <span class="badge-label">Patient</span>
+                        </div>
+                        <div class="doctor-badge text-center">
+                            <span class="badge-num">12 YRS</span>
+                            <span class="badge-label">Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-card">
+                    <img src="./media/Doctor Image (2).png" alt="Dr. Adel" class="doctor-img">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="view-all-wrapper mt-5 d-flex align-items-center justify-content-center gap-2">
+
+            <a href="doctors.html" class="view-all-link text-decoration-none">View all</a>
+            <div class="arrow-circle d-flex align-items-center justify-content-center" style="cursor: pointer;"
+                onclick="window.location.href='doctors.html'">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIFTH SECTION -->
+    <section id="appointments" class="info-banner-section py-5 text-center">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+
+            <h2 class="banner-title text-white fw-bold mb-4 fs-1">
+                Always with you to<br>maintain your health
+            </h2>
+
+            <a href="#" class="appointments-btn text-decoration-none d-flex align-items-center gap-2 fs-5">
+                <i class="bi bi-calendar3"></i>
+                <span style="color: white;">Appointments</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer text-white text-md-start">
+        <section class="container d-flex justify-content-between align-items-center py-4 footer-social-border">
+            <div class="d-none d-md-block">
+                <span class="social-text">Get connected with us on social networks:</span>
+            </div>
+            <div class="social-icons-wrapper d-flex gap-4">
+                <a href="" class="text-white text-decoration-none">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="" class="text-white text-decoration-none">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="" class="text-white text-decoration-none">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="" class="text-white text-decoration-none">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="" class="text-white text-decoration-none">
+                    <i class="bi bi-google"></i>
+                </a>
+            </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row gy-4 justify-content-between">
+                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-start">
+                        <div class="footer-logo-wrapper">
+                            <img src="./media/icon.png" alt="Dr. Mohammad Alfagih Hospital"
+                                class="footer-icon img-fluid">
+                            <div class="hospital-name-ar">مستشفى الدكتور محمد الفقيه</div>
+                            <div class="hospital-name-en">DR. MOHAMMAD ALFAGIH HOSPITAL</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <h6 class="text-uppercase fw-bold mb-4 col-header">Services</h6>
+                        <p class="mb-3">
+                            <a href="#!" class="text-white text-decoration-none footer-link">Appointments</a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="#!" class="text-white text-decoration-none footer-link">Medications</a>
+                        </p>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <h6 class="text-uppercase fw-bold my-3">USEFUL LINKS</h6>
+                        <p class="mb-3">
+                            <a href="#!" class="text-white text-decoration-none footer-link">About</a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="#!" class="text-white text-decoration-none footer-link">Media</a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="#!" class="text-white text-decoration-none footer-link">News</a>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <h6 class="text-uppercase fw-bold mb-4 col-header">CONTACT</h6>
+                        <p class="mb-3 footer-contact-info">0114560000</p>
+                        <p class="mb-3 footer-contact-info">info@dmf.med.sa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pb-5">
+            <div
+                class="copyright-glass-box d-flex flex-column flex-md-row justify-content-between align-items-center px-4 py-3 text-center text-md-start">
+                <div class="mb-2 mb-md-0 copyright-text">
+                    Copyright © 2025 Alfagih. All rights reserved.
+                </div>
+                <div class="d-flex gap-3 privacy-links">
+                    <a href="#!" class="text-white text-decoration-none">Terms & Conditions</a>
+                    <a href="#!" class="text-white text-decoration-none">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
