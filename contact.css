@@ -1,199 +1,177 @@
-/* ===== Hero Banner ===== */
+/* ══════════════════════════════
+   CONTACT – HERO BANNER
+══════════════════════════════ */
 .contact-hero-banner {
-    background: linear-gradient(135deg, #007fc5, #0056a3);
-    min-height: 160px;
-    padding: 40px 20px;
-}
+  background: linear-gradient(135deg, #007fc5, #0056a3);
+  min-height: 160px;
+  padding: 40px 20px;
 
-.contact-hero-banner h2 {
+  & h2 {
     font-size: 2.2rem;
     margin-bottom: 8px;
+
+    @media (max-width: 768px) { font-size: 1.7rem; }
+    @media (max-width: 576px) { font-size: 1.4rem; }
+  }
+
+  @media (max-width: 576px) { min-height: 120px; padding: 30px 16px; }
 }
 
 .breadcrumb-text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+
+  & span { color: #ffffff; font-weight: 600; }
 }
 
-.breadcrumb-text span {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-/* ===== Contact Section ===== */
+/* ══════════════════════════════
+   CONTACT SECTION
+══════════════════════════════ */
 .contact-section {
-    background-color: #ffffff;
+  background-color: #ffffff;
+
+  @media (max-width: 576px) { padding: 30px 0; }
 }
 
 .contact-main-title {
-    font-size: 2rem;
-    color: #0d0d0d;
+  font-size: 2rem;
+  color: #0d0d0d;
+
+  @media (max-width: 768px) { font-size: 1.5rem; }
 }
 
-.contact-desc {
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.8;
-}
+.contact-desc { color: #6b7280; font-size: 14px; line-height: 1.8; }
 
-/* ===== Contact Info Items ===== */
-.contact-info-item {
-    font-size: 14px;
-    color: #333;
-}
+/* ══════════════════════════════
+   CONTACT INFO ITEMS
+══════════════════════════════ */
+.contact-info-item { font-size: 14px; color: #333; }
 
 .contact-icon-wrap {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
-.email-icon {
-    background-color: #007fc5;
-    color:  #e6f3fb;
+.email-icon    { background-color: #007fc5; color: #e6f3fb; }
+.phone-icon    { background-color: #007fc5; color: #e6f3fb; }
+.location-icon { background-color: #007fc5; color: #e6f3fb; }
+
+/* ══════════════════════════════
+   SOCIAL ICONS
+══════════════════════════════ */
+.social-icons-contact {
+  @media (max-width: 576px) { flex-wrap: wrap; }
 }
 
-.phone-icon {
-    background-color:#007fc5;
-    color:  #e6f3fb;
-}
-
-.location-icon {
-    background-color:#007fc5;
-    color: #e6f3fb ;
-}
-
-/* ===== Social Icons ===== */
 .social-icon-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid #d1d5db;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.2s;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s;
+
+  &:hover { background-color: #c9397f; border-color: #007fc5; color: #fff; }
 }
 
-.social-icon-btn:hover {
-    background-color: #c9397f;
-    border-color: #007fc5;
-    color: #fff;
-}
-.btn2:hover{
-    background-color:#0073B2;
-}
-.btn3:hover{
-    background-color:  #0766FF;
-}
-.btn4:hover{
-    background-color: #000000;
-}
-.btn5:hover{
-    background-color: #FFBE00;
-}
+.btn2:hover { background-color: #0073B2; }
+.btn3:hover { background-color: #0766FF; }
+.btn4:hover { background-color: #000000; }
+.btn5:hover { background-color: #FFBE00; }
 
-/* ===== Contact Form Card ===== */
+/* ══════════════════════════════
+   CONTACT FORM CARD
+══════════════════════════════ */
 .contact-form-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+
+  & h4 { color: #0d0d0d; font-size: 1.3rem; }
+
+  @media (max-width: 576px) { padding: 20px 16px !important; }
 }
 
-.contact-form-card h4 {
-    color: #0d0d0d;
-    font-size: 1.3rem;
-}
+.form-subtitle { color: #9ca3af; font-size: 13px; }
 
-.form-subtitle {
-    color: #9ca3af;
-    font-size: 13px;
-}
-
-.form-label-custom {
-    font-size: 13px;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 6px;
-    display: block;
-}
+.form-label-custom { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; display: block; }
 
 .custom-input {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 13px;
-    padding: 10px 14px;
-    color: #374151;
-    background-color: #f9fafb;
-    transition: border-color 0.2s;
-}
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 10px 14px;
+  color: #374151;
+  background-color: #f9fafb;
+  transition: border-color 0.2s;
 
-.custom-input:focus {
+  &:focus {
     border-color: #007fc5;
-    box-shadow: 0 0 0 3px rgba(0, 127, 197, 0.1);
+    box-shadow: 0 0 0 3px rgba(0,127,197,0.1);
     background-color: #fff;
     outline: none;
+  }
+
+  &::placeholder { color: #c4c4c4; }
 }
 
-.custom-input::placeholder {
-    color: #c4c4c4;
-}
+.custom-textarea { resize: none; }
 
-.custom-textarea {
-    resize: none;
-}
-
-/* ===== Phone Flag Select ===== */
+/* ══════════════════════════════
+   PHONE FLAG SELECT
+══════════════════════════════ */
 .phone-flag-select {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 13px;
-    color: #374151;
-    white-space: nowrap;
-    cursor: pointer;
-    min-width: 85px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #374151;
+  white-space: nowrap;
+  cursor: pointer;
+  min-width: 85px;
 }
 
-.flag-code {
-    font-size: 13px;
-    color: #374151;
-}
+.flag-code { font-size: 13px; color: #374151; }
 
-/* ===== Send Button ===== */
+/* ══════════════════════════════
+   SEND BUTTON
+══════════════════════════════ */
 .btn-send {
-    background-color: #007fc5;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 13px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background 0.2s;
+  background-color: #007fc5;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover { background-color: #0066a3; color: #fff; }
 }
 
-.btn-send:hover {
-    background-color: #0066a3;
-    color: #fff;
-}
-
-/* ===== Map ===== */
+/* ══════════════════════════════
+   MAP
+══════════════════════════════ */
 .map-section {
-    width: 100%;
-    line-height: 0;
-}
+  width: 100%;
+  line-height: 0;
 
-.map-section iframe {
+  & iframe {
     display: block;
     width: 100%;
     height: 350px;
     border: none;
+
+    @media (max-width: 768px) { height: 250px; }
+    @media (max-width: 576px) { height: 200px; }
+  }
 }

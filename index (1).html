@@ -17,7 +17,7 @@
 
 <body>
     <header class="custom-header">
-        <div class="top-bar d-flex justify-content-end align-items-center">
+        <div class="top-bar d-none d-md-flex justify-content-end align-items-center">
             <a href="#" class="top-link">Join Us</a>
             <a href="tel:0114560000" class="top-link">0114560000</a>
             <a href="mailto:info@dmf.med.sa" class="top-link">info@dmf.med.sa</a>
@@ -32,8 +32,12 @@
                 </div>
             </div>
 
+            <button class="hamburger-btn d-md-none" id="hamburgerBtn" aria-label="Toggle menu">
+                <i class="bi bi-list"></i>
+            </button>
+
             <nav class="custom-navbar">
-                <div class="nav-links-wrapper">
+                <div class="nav-links-wrapper" id="navLinksWrapper">
                     <a class="nav-item active-home" href="#">Home</a>
                     <a class="nav-item" href="#about">About</a>
                     <a class="nav-item" href="#appointments">Appointments</a>
@@ -41,7 +45,6 @@
                     <a class="nav-item" href="#">News</a>
                     <a class="nav-item" href="#">Media</a>
                     <a class="nav-item" href="contact.html">Contact Us</a>
-
                     <a class="nav-item search-icon-btn" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">

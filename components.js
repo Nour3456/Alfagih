@@ -1,4 +1,3 @@
-
 const headerHTML = `
 <header class="custom-header">
     <div class="top-bar d-flex justify-content-end align-items-center">
@@ -16,8 +15,12 @@ const headerHTML = `
             </div>
         </div>
 
+        <button class="hamburger-btn d-md-none" id="hamburgerBtn" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+
         <nav class="custom-navbar">
-            <div class="nav-links-wrapper">
+            <div class="nav-links-wrapper" id="navLinksWrapper">
                 <a class="nav-item" href="index.html">Home</a>
                 <a class="nav-item" href="#">About</a>
                 <a class="nav-item" href="#">Appointments</a>
@@ -104,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
 
+        // Active nav highlighting
         const currentPage = window.location.pathname.split("/").pop();
         const navItems = document.querySelectorAll(".nav-item");
         navItems.forEach((item) => {
@@ -115,6 +119,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.classList.add("active-home");
             }
         });
+
+        // ── Hamburger toggle ──────────────────────────────
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navLinksWrapper = document.getElementById("navLinksWrapper");
+
+        if (hamburgerBtn && navLinksWrapper) {
+            hamburgerBtn.addEventListener("click", function () {
+                const isOpen = navLinksWrapper.classList.toggle("open");
+                // Swap icon
+                hamburgerBtn.innerHTML = isOpen
+                    ? '<i class="bi bi-x-lg"></i>'
+                    : '<i class="bi bi-list"></i>';
+            });
+
+            // Close menu when a nav link is clicked
+            navLinksWrapper.querySelectorAll(".nav-item").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    navLinksWrapper.classList.remove("open");
+                    hamburgerBtn.innerHTML = '<i class="bi bi-list"></i>';
+                });
+            });
+        }
     }
 
     const footerPlaceholder = document.getElementById("footer-placeholder");

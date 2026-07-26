@@ -31,3 +31,25 @@ $(document).ready(function() {
 
 });
 
+
+// ── Hamburger menu for inline header (index.html) ─────────────
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navLinksWrapper = document.getElementById("navLinksWrapper");
+
+    if (hamburgerBtn && navLinksWrapper) {
+        hamburgerBtn.addEventListener("click", function () {
+            const isOpen = navLinksWrapper.classList.toggle("open");
+            hamburgerBtn.innerHTML = isOpen
+                ? '<i class="bi bi-x-lg"></i>'
+                : '<i class="bi bi-list"></i>';
+        });
+
+        navLinksWrapper.querySelectorAll(".nav-item").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinksWrapper.classList.remove("open");
+                hamburgerBtn.innerHTML = '<i class="bi bi-list"></i>';
+            });
+        });
+    }
+});
