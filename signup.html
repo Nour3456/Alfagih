@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="./signup.css">
+    <title>Sign Up - Alfagih Hospital</title>
+</head>
+
+<body>
+
+    <div class="signup-page">
+        <div class="signup-card">
+
+            <!-- Logo -->
+            <div class="logo-section d-flex justify-content-center align-items-center gap-2 mb-2">
+                <img src="./media/origin icon.png" alt="Hospital Logo" class="logo-img">
+               
+            </div>
+
+            <!-- Title -->
+            <div class="text-center mb-4">
+                <h3 class="signup-title">Create Your Account</h3>
+                <span class="signup-sub">Join us and take the first step to better health</span>
+            </div>
+
+            <form class="row g-4" id="signupForm">
+
+                <!-- First Name + Last Name -->
+                <div class="col-md-6 input-wrap">
+                    <span class="input-icon"><i class="fa-regular fa-user"></i></span>
+                    <input type="text" class="form-control" id="inputFirstN" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6 input-wrap">
+                    <span class="input-icon"><i class="fa-regular fa-user"></i></span>
+                    <input type="text" class="form-control" id="inputLastN" placeholder="Last Name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="col-12 input-wrap">
+                    <span class="input-icon"><i class="fa-regular fa-envelope"></i></span>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email Address" required>
+                </div>
+
+                <!-- Phone + Date of Birth -->
+                <div class="col-md-6 input-wrap">
+                    <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="tel" class="form-control" id="inputPhone" placeholder="Phone Number" required maxlength="11" pattern="[0-9]{11}">
+                </div>
+                <div class="col-md-6 input-wrap">
+                    <span class="input-icon"><i class="fa-regular fa-calendar"></i></span>
+                    <input type="text" class="form-control" id="inputDOB" placeholder="Date of Birth" required>
+                </div>
+
+                <!-- Password -->
+                <div class="col-6">
+                    <div class="input-wrap">
+                        <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+                        <button class="eye-btn" type="button" id="togglePassword1">
+                            <i class="bi bi-eye-slash" id="eyeIcon1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="col-6">
+                    <div class="input-wrap">
+                        <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" class="form-control" id="ConfirmedPass" placeholder="Confirm Password" required>
+                        <button class="eye-btn" type="button" id="togglePassword2">
+                            <i class="bi bi-eye-slash" id="eyeIcon2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Select Gender -->
+                <div class="col-12 input-wrap">
+                    <span class="input-icon"><i class="fa-regular fa-user"></i></span>
+                    <select id="inputGender" class="form-select" required>
+                        <option value="" selected disabled hidden>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <!-- Select Role -->
+                <div class="col-12 input-wrap">
+                    <span class="input-icon"><i class="fa-solid fa-briefcase-medical"></i></span>
+                    <select id="inputRole" class="form-select" required>
+                        <option value="" selected disabled hidden>Select Role</option>
+                        <option value="Patient">Patient</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Staff">Staff</option>
+                    </select>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                        <label class="form-check-label terms-label" for="gridCheck">
+                            I agree to the <a href="#" class="terms-link">Terms & Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Create Account Button -->
+                <div class="col-12">
+                    <button type="submit" class="btn-signup w-100">Create Account</button>
+                </div>
+
+                <!-- Sign In Link -->
+                <div class="col-12 text-center">
+                    <span class="signin-text">Already have an account? <a href="login.html" class="signin-link">Sign in</a></span>
+                </div>
+
+            </form>
+
+            <!-- Bottom Features -->
+            <div class="signup-features d-flex justify-content-between mt-4">
+                <div class="feature-item text-center">
+                    <i class="fa-solid fa-shield-halved feature-icon"></i>
+                    <p class="feature-label">Trusted Care</p>
+                    <p class="feature-desc">Quality you can rely on</p>
+                </div>
+                <div class="feature-item text-center">
+                    <i class="fa-regular fa-calendar-check feature-icon"></i>
+                    <p class="feature-label">Easy Appointments</p>
+                    <p class="feature-desc">Book and manage with ease</p>
+                </div>
+                <div class="feature-item text-center">
+                    <i class="fa-solid fa-headset feature-icon"></i>
+                    <p class="feature-label">Patient Support</p>
+                    <p class="feature-desc">We are here to help you</p>
+                </div>
+                <div class="feature-item text-center">
+                    <i class="fa-solid fa-file-medical feature-icon"></i>
+                    <p class="feature-label">Health Records</p>
+                    <p class="feature-desc">Secure and always accessible</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./signup.js"></script>
+    <!-- Validation -->
+    <script src="./validation.js"></script>
+</body>
+
+</html>
