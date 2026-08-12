@@ -356,9 +356,9 @@ function initForgotPassword() {
     clearFieldError();
 
     var otp = Math.floor(1000 + Math.random() * 9000).toString();
-    localStorage.setItem("alfagih_otp", otp);
-    localStorage.setItem("alfagih_otp_user", matchedUser.email);
-    localStorage.setItem("alfagih_otp_expires", Date.now() + 10 * 60 * 1000);
+    sessionStorage.setItem("alfagih_otp", otp);
+    sessionStorage.setItem("alfagih_otp_user", matchedUser.email);
+    sessionStorage.setItem("alfagih_otp_expires", Date.now() + 10 * 60 * 1000);
 
     showSuccessToast("Your code is: " + otp + " (demo — would be sent to your email)", function() {
       window.location.href = "otp.html";
@@ -437,8 +437,8 @@ function initOTP() {
     e.preventDefault();
 
     var otp = Math.floor(1000 + Math.random() * 9000).toString();
-    localStorage.setItem("alfagih_otp", otp);
-    localStorage.setItem("alfagih_otp_expires", Date.now() + 10 * 60 * 1000);
+    sessionStorage.setItem("alfagih_otp", otp);
+    sessionStorage.setItem("alfagih_otp_expires", Date.now() + 10 * 60 * 1000);
 
     inputs.forEach(function(inp) {
       inp.value = "";
@@ -477,9 +477,9 @@ function initOTP() {
       return;
     }
 
-    var savedOtp     = localStorage.getItem("alfagih_otp");
-    var otpExpires   = parseInt(localStorage.getItem("alfagih_otp_expires") || "0");
-    var otpUserEmail = localStorage.getItem("alfagih_otp_user");
+    var savedOtp     = sessionStorage.getItem("alfagih_otp");
+    var otpExpires   = parseInt(sessionStorage.getItem("alfagih_otp_expires") || "0");
+    var otpUserEmail = sessionStorage.getItem("alfagih_otp_user");
 
     if (Date.now() > otpExpires) {
       inputs.forEach(function(inp) { inp.classList.add("otp-error"); });
@@ -502,9 +502,9 @@ function initOTP() {
       localStorage.setItem("alfagih_current_user", JSON.stringify(user));
     }
 
-    localStorage.removeItem("alfagih_otp");
-    localStorage.removeItem("alfagih_otp_user");
-    localStorage.removeItem("alfagih_otp_expires");
+    sessionStorage.removeItem("alfagih_otp");
+    sessionStorage.removeItem("alfagih_otp_user");
+    sessionStorage.removeItem("alfagih_otp_expires");
 
     showSuccessToast("Identity verified! Welcome back " + (user ? user.firstName : "") + "!", function() {
       window.location.href = "index.html";
