@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('.btn-watch-video').on('click', function(e) {
         e.preventDefault(); 
@@ -31,8 +30,6 @@ $(document).ready(function() {
 
 });
 
-
-// ── Hamburger menu for inline header (index.html) ─────────────
 document.addEventListener("DOMContentLoaded", function () {
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navLinksWrapper = document.getElementById("navLinksWrapper");
@@ -51,5 +48,65 @@ document.addEventListener("DOMContentLoaded", function () {
                 hamburgerBtn.innerHTML = '<i class="bi bi-list"></i>';
             });
         });
+    }
+});
+
+function openDoctorModal(card) {
+
+    const name      = card.dataset.name;
+    const specialty = card.dataset.specialty;
+    const gender    = card.dataset.gender;
+    const exp       = card.dataset.experience;
+    const patients  = card.dataset.patients;
+    const rating    = parseInt(card.dataset.rating);
+    const about     = card.dataset.about;
+    const services  = card.dataset.services.split(',');
+    const location  = card.dataset.location;
+    const img       = card.dataset.img;
+    document.getElementById('modal-name').textContent       = name;
+    document.getElementById('modal-specialty').textContent  = specialty;
+    document.getElementById('modal-spec-badge').textContent = specialty;
+    document.getElementById('modal-exp').textContent        = exp;
+    document.getElementById('modal-gender').textContent     = gender;
+    document.getElementById('modal-about').textContent      = about;
+    document.getElementById('modal-location').textContent   = location;
+    document.getElementById('modal-doctor-img').src         = img;
+
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += `<i class="bi ${i <= rating ? 'bi-star-fill' : 'bi-star'}" style="color: ${i <= rating ? '#f59e0b' : '#d1d5db'};"></i>`;
+    }
+    document.getElementById('modal-stars').innerHTML = starsHTML;
+
+    let servicesHTML = '';
+    services.forEach(service => {
+        servicesHTML += `
+            <div class="modal-service-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>${service.trim()}</span>
+            </div>
+        `;
+    });
+    document.getElementById('modal-services').innerHTML = servicesHTML;
+
+    document.getElementById('doctor-modal-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden'; 
+}
+
+function closeDoctorModal(event) {
+    if (event && event.target !== document.getElementById('doctor-modal-overlay')) return;
+
+    document.getElementById('doctor-modal-overlay').classList.remove('active');
+    document.body.style.overflow = ''; 
+}
+
+function goToAppointments() {
+    window.location.href = 'appointments.html';
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        document.getElementById('doctor-modal-overlay').classList.remove('active');
+        document.body.style.overflow = '';
     }
 });

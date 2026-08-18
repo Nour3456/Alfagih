@@ -23,7 +23,7 @@ const headerHTML = `
             <div class="nav-links-wrapper" id="navLinksWrapper">
                 <a class="nav-item" href="index.html">Home</a>
                 <a class="nav-item" href="#">About</a>
-                <a class="nav-item" href="#">Appointments</a>
+                <a class="nav-item" href="appointments.html">Appointments</a>
                 <a class="nav-item" href="#">Services</a>
                 <a class="nav-item" href="#">News</a>
                 <a class="nav-item" href="#">Media</a>
@@ -106,8 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerPlaceholder = document.getElementById("header-placeholder");
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
-
-        // Active nav highlighting
         const currentPage = window.location.pathname.split("/").pop();
         const navItems = document.querySelectorAll(".nav-item");
         navItems.forEach((item) => {
@@ -119,21 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.classList.add("active-home");
             }
         });
-
-        // ── Hamburger toggle ──────────────────────────────
         const hamburgerBtn = document.getElementById("hamburgerBtn");
         const navLinksWrapper = document.getElementById("navLinksWrapper");
 
         if (hamburgerBtn && navLinksWrapper) {
             hamburgerBtn.addEventListener("click", function () {
                 const isOpen = navLinksWrapper.classList.toggle("open");
-                // Swap icon
                 hamburgerBtn.innerHTML = isOpen
                     ? '<i class="bi bi-x-lg"></i>'
                     : '<i class="bi bi-list"></i>';
             });
-
-            // Close menu when a nav link is clicked
             navLinksWrapper.querySelectorAll(".nav-item").forEach(function (link) {
                 link.addEventListener("click", function () {
                     navLinksWrapper.classList.remove("open");

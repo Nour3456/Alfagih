@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css"
+        integrity="sha512-F/yRpRY8sctKzP7exU5PLGejwg/QtjDX6CIy/41nApe7JqdZgCcCzJTNq9Rcp/XwbeeTGillGevBakruY15pxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="appointments.css">
+    <title>Book an Appointment - Alfagih Hospital</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Banner -->
+    <section class="appt-hero-banner d-flex align-items-center justify-content-center text-white text-center">
+        <div>
+            <h2 class="fw-bold">Book an Appointment</h2>
+            <p class="breadcrumb-text mb-0">Home / <span>Appointments</span></p>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="appt-section py-5">
+        <div class="container">
+
+            <!-- Progress Steps -->
+            <div class="steps-wrapper mb-5">
+                <div class="steps-track">
+
+                    <div class="step-node active" id="stepNode1">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                            </div>
+                        </div>
+                        <span class="step-label">Specialty</span>
+                    </div>
+
+                    <div class="step-connector" id="conn1"></div>
+
+                    <div class="step-node" id="stepNode2">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                        </div>
+                        <span class="step-label">Doctor</span>
+                    </div>
+
+                    <div class="step-connector" id="conn2"></div>
+
+                    <div class="step-node" id="stepNode3">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="bi bi-calendar3"></i>
+                            </div>
+                        </div>
+                        <span class="step-label">Date & Time</span>
+                    </div>
+
+                    <div class="step-connector" id="conn3"></div>
+
+                    <div class="step-node" id="stepNode4">
+                        <div class="step-circle-outer">
+                            <div class="step-circle-inner">
+                                <i class="bi bi-check2-circle"></i>
+                            </div>
+                        </div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Steps Content -->
+            <div class="step-content-area">
+
+                <!-- ══ STEP 1: Specialty ══ -->
+                <div class="step-panel active" id="panel1">
+                    <div class="step-panel-header">
+                        <div class="step-panel-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+                        <div>
+                            <h3 class="step-panel-title">Choose Your Specialty</h3>
+                            <p class="step-panel-sub">Select the medical field that matches your needs</p>
+                        </div>
+                    </div>
+
+                    <div class="specialty-grid">
+
+                        <div class="specialty-card" data-specialty="Medical / Surgery Services" onclick="selectSpecialty(this)">
+                            <div class="sc-icon-wrap sc-orange">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <span class="sc-title">Medical / Surgery Services</span>
+                            <span class="sc-count">14 Doctors</span>
+                        </div>
+
+                        <div class="specialty-card" data-specialty="Physical Therapy" onclick="selectSpecialty(this)">
+                            <div class="sc-icon-wrap sc-green">
+                                <i class="fa-solid fa-person-walking"></i>
+                            </div>
+                            <span class="sc-title">Physical Therapy</span>
+                            <span class="sc-count">8 Doctors</span>
+                        </div>
+
+                        <div class="specialty-card" data-specialty="Dentistry" onclick="selectSpecialty(this)">
+                            <div class="sc-icon-wrap sc-pink">
+                                <i class="fa-solid fa-tooth"></i>
+                            </div>
+                            <span class="sc-title">Dentistry</span>
+                            <span class="sc-count">9 Doctors</span>
+                        </div>
+
+                        <div class="specialty-card" data-specialty="Pharmacy" onclick="selectSpecialty(this)">
+                            <div class="sc-icon-wrap sc-blue">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <span class="sc-title">Pharmacy</span>
+                            <span class="sc-count">6 Doctors</span>
+                        </div>
+
+                    </div>
+
+                    <div class="step-actions justify-content-end">
+                        <button class="btn-step-next" id="nextToStep2" onclick="goToStep(2)" disabled>
+                            Next: Choose Doctor <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ══ STEP 2: Doctor ══ -->
+                <div class="step-panel" id="panel2">
+                    <div class="step-panel-header">
+                        <div class="step-panel-icon"><i class="bi bi-person-badge"></i></div>
+                        <div>
+                            <h3 class="step-panel-title">Choose Your Doctor</h3>
+                            <p class="step-panel-sub">Available specialists in <strong id="chosenSpecLabel">—</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Search & Filter row -->
+                    <div class="doctor-filter-row mb-4">
+                        <div class="doc-search-wrap">
+                            <i class="bi bi-search doc-search-icon"></i>
+                            <input type="text" class="doc-search-input" placeholder="Search doctor name…" oninput="filterDoctors(this.value)">
+                        </div>
+                        <select class="doc-filter-select" onchange="filterByGender(this.value)">
+                            <option value="">All Genders</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <select class="doc-filter-select" onchange="filterByRating(this.value)">
+                            <option value="">Any Rating</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4+ Stars</option>
+                        </select>
+                    </div>
+
+                    <div class="doctors-list" id="doctorsList">
+
+                        <div class="doctor-row" data-name="dr ahmed salem" data-gender="male" data-rating="5" onclick="selectDoctor(this)">
+                            <div class="dr-avatar male-avatar">AS</div>
+                            <div class="dr-info">
+                                <div class="dr-name">Dr. Ahmed Salem <i class="bi bi-patch-check-fill verified-icon"></i></div>
+                                <div class="dr-spec" id="drSpec1">Cardiology Consultant</div>
+                                <div class="dr-meta">
+                                    <span class="dr-badge-exp"><i class="bi bi-award-fill"></i> 12 Yrs Exp</span>
+                                    <span class="dr-badge-pat"><i class="bi bi-people-fill"></i> +2000 Patients</span>
+                                </div>
+                            </div>
+                            <div class="dr-right">
+                                <div class="dr-stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <div class="dr-availability available">Available Today</div>
+                                <div class="dr-select-btn">Select</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-row" data-name="dr aisha al enazi" data-gender="female" data-rating="4" onclick="selectDoctor(this)">
+                            <div class="dr-avatar female-avatar">AE</div>
+                            <div class="dr-info">
+                                <div class="dr-name">Dr. Aisha Al Enazi <i class="bi bi-patch-check-fill verified-icon"></i></div>
+                                <div class="dr-spec">Cardiology Consultant</div>
+                                <div class="dr-meta">
+                                    <span class="dr-badge-exp"><i class="bi bi-award-fill"></i> 9 Yrs Exp</span>
+                                    <span class="dr-badge-pat"><i class="bi bi-people-fill"></i> +1500 Patients</span>
+                                </div>
+                            </div>
+                            <div class="dr-right">
+                                <div class="dr-stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                </div>
+                                <div class="dr-availability available">Available Today</div>
+                                <div class="dr-select-btn">Select</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-row" data-name="dr adel alotaibi" data-gender="male" data-rating="5" onclick="selectDoctor(this)">
+                            <div class="dr-avatar male-avatar">AA</div>
+                            <div class="dr-info">
+                                <div class="dr-name">Dr. Adel Alotaibi <i class="bi bi-patch-check-fill verified-icon"></i></div>
+                                <div class="dr-spec">Senior Consultant</div>
+                                <div class="dr-meta">
+                                    <span class="dr-badge-exp"><i class="bi bi-award-fill"></i> 15 Yrs Exp</span>
+                                    <span class="dr-badge-pat"><i class="bi bi-people-fill"></i> +3000 Patients</span>
+                                </div>
+                            </div>
+                            <div class="dr-right">
+                                <div class="dr-stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <div class="dr-availability busy">Next Available: Tomorrow</div>
+                                <div class="dr-select-btn">Select</div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-row" data-name="dr maya farouk" data-gender="female" data-rating="4" onclick="selectDoctor(this)">
+                            <div class="dr-avatar female-avatar">MF</div>
+                            <div class="dr-info">
+                                <div class="dr-name">Dr. Maya Farouk <i class="bi bi-patch-check-fill verified-icon"></i></div>
+                                <div class="dr-spec">Specialist</div>
+                                <div class="dr-meta">
+                                    <span class="dr-badge-exp"><i class="bi bi-award-fill"></i> 7 Yrs Exp</span>
+                                    <span class="dr-badge-pat"><i class="bi bi-people-fill"></i> +900 Patients</span>
+                                </div>
+                            </div>
+                            <div class="dr-right">
+                                <div class="dr-stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                </div>
+                                <div class="dr-availability available">Available Today</div>
+                                <div class="dr-select-btn">Select</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn-step-back" onclick="goToStep(1)">
+                            <i class="bi bi-arrow-left me-2"></i> Back
+                        </button>
+                        <button class="btn-step-next" id="nextToStep3" onclick="goToStep(3)" disabled>
+                            Next: Pick Date & Time <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ══ STEP 3: Date & Time ══ -->
+                <div class="step-panel" id="panel3">
+                    <div class="step-panel-header">
+                        <div class="step-panel-icon"><i class="bi bi-calendar3"></i></div>
+                        <div>
+                            <h3 class="step-panel-title">Choose Date & Time</h3>
+                            <p class="step-panel-sub">Pick a slot that works for you</p>
+                        </div>
+                    </div>
+
+                    <div class="datetime-layout">
+
+                        <!-- Calendar -->
+                        <div class="cal-card">
+                            <div class="cal-nav">
+                                <button class="cal-nav-btn" onclick="changeMonth(-1)"><i class="bi bi-chevron-left"></i></button>
+                                <span class="cal-month-label" id="calMonthLabel"></span>
+                                <button class="cal-nav-btn" onclick="changeMonth(1)"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="cal-days-header">
+                                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                            </div>
+                            <div class="cal-grid" id="calGrid"></div>
+                            <div class="cal-legend">
+                                <span><span class="leg-dot avail"></span> Available</span>
+                                <span><span class="leg-dot sel"></span> Selected</span>
+                                <span><span class="leg-dot past"></span> Unavailable</span>
+                            </div>
+                        </div>
+
+                        <!-- Time Slots -->
+                        <div class="timeslot-card">
+                            <div class="timeslot-date-label" id="timeslotDateLabel">Select a date first</div>
+                            <div class="timeslot-period">
+                                <p class="period-label"><i class="bi bi-sun-fill"></i> Morning</p>
+                                <div class="slots-grid" id="morningSlots">
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="09:00 AM">09:00 AM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="09:30 AM">09:30 AM</button>
+                                    <button class="time-slot booked" disabled>10:00 AM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="10:30 AM">10:30 AM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="11:00 AM">11:00 AM</button>
+                                    <button class="time-slot booked" disabled>11:30 AM</button>
+                                </div>
+                            </div>
+                            <div class="timeslot-period">
+                                <p class="period-label"><i class="bi bi-moon-stars-fill"></i> Afternoon</p>
+                                <div class="slots-grid">
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="01:00 PM">01:00 PM</button>
+                                    <button class="time-slot booked" disabled>01:30 PM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="02:00 PM">02:00 PM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="02:30 PM">02:30 PM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="03:00 PM">03:00 PM</button>
+                                    <button class="time-slot" onclick="selectSlot(this)" data-time="03:30 PM">03:30 PM</button>
+                                </div>
+                            </div>
+                            <div class="slots-legend-row">
+                                <span class="sl-item avail">Available</span>
+                                <span class="sl-item booked">Booked</span>
+                                <span class="sl-item selected">Selected</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Visit type -->
+                    <div class="visit-type-row mt-4">
+                        <p class="vt-label">Visit Type</p>
+                        <div class="vt-options">
+                            <label class="vt-option">
+                                <input type="radio" name="visitType" value="in-clinic" checked>
+                                <span class="vt-card">
+                                    <i class="bi bi-hospital-fill"></i>
+                                    <strong>In-Clinic</strong>
+                                    <small>Visit the hospital</small>
+                                </span>
+                            </label>
+                            <label class="vt-option">
+                                <input type="radio" name="visitType" value="video">
+                                <span class="vt-card">
+                                    <i class="bi bi-camera-video-fill"></i>
+                                    <strong>Video Call</strong>
+                                    <small>From anywhere</small>
+                                </span>
+                            </label>
+                            <label class="vt-option">
+                                <input type="radio" name="visitType" value="home">
+                                <span class="vt-card">
+                                    <i class="bi bi-house-heart-fill"></i>
+                                    <strong>Home Visit</strong>
+                                    <small>Doctor comes to you</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn-step-back" onclick="goToStep(2)">
+                            <i class="bi bi-arrow-left me-2"></i> Back
+                        </button>
+                        <button class="btn-step-next" id="nextToStep4" onclick="goToStep(4)" disabled>
+                            Next: Confirm <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ══ STEP 4: Confirm ══ -->
+                <div class="step-panel" id="panel4">
+                    <div class="step-panel-header">
+                        <div class="step-panel-icon"><i class="bi bi-check2-circle"></i></div>
+                        <div>
+                            <h3 class="step-panel-title">Confirm Your Appointment</h3>
+                            <p class="step-panel-sub">Review your details before confirming</p>
+                        </div>
+                    </div>
+
+                    <div class="confirm-layout">
+
+                        <!-- Summary Card -->
+                        <div class="confirm-summary-card">
+                            <div class="cs-header">
+                                <i class="bi bi-clipboard2-check-fill cs-icon"></i>
+                                <span>Appointment Summary</span>
+                            </div>
+                            <div class="cs-rows">
+                                <div class="cs-row">
+                                    <span class="cs-key"><i class="bi bi-grid-3x3-gap-fill"></i> Specialty</span>
+                                    <span class="cs-val" id="sumSpecialty">—</span>
+                                </div>
+                                <div class="cs-row">
+                                    <span class="cs-key"><i class="bi bi-person-badge"></i> Doctor</span>
+                                    <span class="cs-val" id="sumDoctor">—</span>
+                                </div>
+                                <div class="cs-row">
+                                    <span class="cs-key"><i class="bi bi-calendar3"></i> Date</span>
+                                    <span class="cs-val" id="sumDate">—</span>
+                                </div>
+                                <div class="cs-row">
+                                    <span class="cs-key"><i class="bi bi-clock"></i> Time</span>
+                                    <span class="cs-val" id="sumTime">—</span>
+                                </div>
+                                <div class="cs-row">
+                                    <span class="cs-key"><i class="bi bi-hospital"></i> Visit Type</span>
+                                    <span class="cs-val" id="sumVisitType">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Patient Details Form -->
+                        <div class="confirm-form-card">
+                            <h5 class="cf-title">Your Information</h5>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="cf-label">First Name</label>
+                                    <div class="cf-input-wrap">
+                                        <i class="bi bi-person cf-icon"></i>
+                                        <input type="text" class="cf-input" placeholder="Your first name" id="patFirstName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cf-label">Last Name</label>
+                                    <div class="cf-input-wrap">
+                                        <i class="bi bi-person cf-icon"></i>
+                                        <input type="text" class="cf-input" placeholder="Your last name" id="patLastName">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cf-label">Email Address</label>
+                                    <div class="cf-input-wrap">
+                                        <i class="bi bi-envelope cf-icon"></i>
+                                        <input type="email" class="cf-input" placeholder="your@email.com" id="patEmail">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="cf-label">Phone Number</label>
+                                    <div class="cf-input-wrap">
+                                        <i class="bi bi-telephone cf-icon"></i>
+                                        <input type="tel" class="cf-input" placeholder="05XXXXXXXX" id="patPhone">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="cf-label">Notes for Doctor <span class="optional-tag">(Optional)</span></label>
+                                    <textarea class="cf-textarea" placeholder="Describe your symptoms or any notes…" rows="3"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label class="cf-check">
+                                        <input type="checkbox" id="agreeCheck"> I confirm that the above information is correct and I agree to the <a href="#" class="cf-link">Terms & Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="btn-step-back" onclick="goToStep(3)">
+                            <i class="bi bi-arrow-left me-2"></i> Back
+                        </button>
+                        <button class="btn-confirm" id="confirmBtn" onclick="submitAppointment()">
+                            <i class="bi bi-check2-circle me-2"></i> Confirm Appointment
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ══ SUCCESS STATE ══ -->
+            <div class="success-overlay" id="successOverlay" style="display:none;">
+                <div class="success-card">
+                    <div class="success-check-ring">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+                    <h2 class="success-title">Appointment Confirmed!</h2>
+                    <p class="success-sub">Your appointment has been successfully booked. A confirmation will be sent to your email.</p>
+                    <div class="success-details">
+                        <div class="sd-row"><i class="bi bi-person-badge"></i> <span id="succDoctor"></span></div>
+                        <div class="sd-row"><i class="bi bi-calendar3"></i> <span id="succDate"></span></div>
+                        <div class="sd-row"><i class="bi bi-clock"></i> <span id="succTime"></span></div>
+                    </div>
+                    <button class="btn-book-another" onclick="resetAll()">
+                        <i class="bi bi-plus-circle me-2"></i> Book Another Appointment
+                    </button>
+                    <a href="index.html" class="btn-go-home">
+                        <i class="bi bi-house me-2"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+    <script src="appointments.js"></script>
+</body>
+
+</html>
