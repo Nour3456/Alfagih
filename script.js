@@ -124,3 +124,16 @@ document.getElementById('doctor-search').addEventListener('input', function () {
         }
     });
 });
+
+document.getElementById('gender-select').addEventListener('change',function(){
+    const selected = this.value.toLowerCase();
+    document.querySelectorAll('.doctor-card').forEach(function(card){
+        const gender = card.dataset.gender.toLowerCase();
+        if( selected =='' || gender === selected){
+            card.closest('.col-12').style.display='';
+            } else{
+                 card.closest('.col-12').style.display='none';
+
+        }
+    })
+})
