@@ -22,12 +22,12 @@ const headerHTML = `
         <nav class="custom-navbar">
             <div class="nav-links-wrapper" id="navLinksWrapper">
                 <a class="nav-item" href="index.html">Home</a>
-                <a class="nav-item" href="#">About</a>
+                <a class="nav-item" href="index.html #about">About</a>
                 <a class="nav-item" href="appointments.html">Appointments</a>
                 <a class="nav-item" href="#">Services</a>
                 <a class="nav-item" href="#">News</a>
                 <a class="nav-item" href="#">Media</a>
-                <a class="nav-item" href="#">Contact Us</a>
+                <a class="nav-item" href="contact.html">Contact Us</a>
 
                 <a class="nav-item search-icon-btn" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
