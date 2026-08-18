@@ -22,7 +22,7 @@ const headerHTML = `
         <nav class="custom-navbar">
             <div class="nav-links-wrapper" id="navLinksWrapper">
                 <a class="nav-item" href="index.html">Home</a>
-                <a class="nav-item" href="index.html #about">About</a>
+                <a class="nav-item" href="index.html#about">About</a>
                 <a class="nav-item" href="appointments.html">Appointments</a>
                 <a class="nav-item" href="#">Services</a>
                 <a class="nav-item" href="#">News</a>
