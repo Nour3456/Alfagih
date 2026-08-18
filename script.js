@@ -110,3 +110,17 @@ document.addEventListener('keydown', function (e) {
         document.body.style.overflow = '';
     }
 });
+
+document.getElementById('doctor-search').addEventListener('input', function () {
+    const searchText = this.value.toLowerCase();
+
+    document.querySelectorAll('.doctor-card').forEach(function (card) {
+        const name = card.querySelector('h5').textContent.toLowerCase();
+
+        if (name.includes(searchText)) {
+            card.closest('.col-12').style.display = '';
+        } else {
+            card.closest('.col-12').style.display = 'none';
+        }
+    });
+});
